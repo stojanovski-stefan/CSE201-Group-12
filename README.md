@@ -17,9 +17,6 @@
     <li>...</li>
 </ul>
 
-<h2>Working Site</h2>
-<a href="#">Squib Website</a>
-
 <h2>Credits</h2>
 <ul>
     <li>Zarif Fida Chowdhury</li>

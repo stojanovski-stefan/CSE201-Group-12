@@ -25,9 +25,9 @@
     ></script>
 
     <!-- Navbar -->
-    <nav class="navbar px-3 py-1 navbar-dark bg-dark">
+    <nav class="navbar navbar-expand-md px-3 py-1 navbar-dark bg-dark">
       <div class="container-fluid">
-        <div class="navbar-brand" href="#">
+        <a class="navbar-brand" href="index.html">
           <img
             src="./images/logo.png"
             alt="Logo"
@@ -35,10 +35,38 @@
             height="50"
             class="d-inline-block align-text-center"
           />
-          <span>Squib</span>
+          <span id="navbar-title">Squib</span>
+        </a>
+        <!-- Toggle button for mobile nav -->
+        <button
+          class="navbar-toggler justify-content-end align-center"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#main-nav"
+          aria-controls="main-nav"
+          aria-expanded="false"
+          aria-label="Toggle navigation"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <!-- navbar-links -->
+        <div
+          class="collapse navbar-collapse justify-content-end align-center"
+          id="main-nav"
+        >
+          <ul class="navbar-nav">
+            <li class="nav-item">
+              <a href="#" class="nav-link link">About</a>
+            </li>
+            <li class="nav-item">
+              <a href="#" class="nav-link link">Reviews</a>
+            </li>
+          </ul>
         </div>
       </div>
     </nav>
+
     <!-- Main image and intro text -->
     <section id="intro">
       <div class="container-lg">
@@ -52,10 +80,16 @@
               Lorem ipsum dolor sit amet consectetur adipisicing elit. Ex
               deleniti eaque sequi!
             </p>
-            <a href="./pages/sign-up.html" class="btn btn-primary btn-lg"
+            <a
+              href="./pages/sign-up.html"
+              id="sign-up"
+              class="btn btn-primary btn-lg"
               >Sign Up</a
             >
-            <a href="./pages/login.html" class="btn btn-secondary btn-lg"
+            <a
+              href="./pages/login.html"
+              id="log-in"
+              class="btn btn-secondary btn-lg"
               >Log in</a
             >
           </div>

@@ -6,10 +6,6 @@
   --dark-shade: #1c161f;
 }
 
-:root.dark {
-  --main-color: #5775b4;
-}
-
 section {
   padding: 60px 0;
 }

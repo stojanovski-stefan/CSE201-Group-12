@@ -18,7 +18,7 @@ body {
   background-color: var(--light-shade);
 }
 
-nav {
+#navbar {
   background-color: var(--dark-shade);
 }
 

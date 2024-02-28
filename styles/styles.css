@@ -1,10 +1,15 @@
 :root {
-  --main-color: #c498a0;
-  --light-accent: #9e978e;
+  --main-color: #5775b4;
+  --light-accent: #9e7861;
   --light-shade: #f5f8f2;
-  --dark-accent: #a95043;
-  --dark-shade: #2f2d2d;
+  --dark-accent: #673655;
+  --dark-shade: #1c161f;
 }
+
+:root.dark {
+  --main-color: #5775b4;
+}
+
 section {
   padding: 60px 0;
 }

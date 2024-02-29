@@ -7,7 +7,20 @@
 }
 
 section {
-  padding: 60px 0;
+  padding: 100px 0;
+}
+
+#submit-button {
+  background-color: var(--main-color);
+}
+
+input {
+  background-color: var(--light-shade);
+  color: var(--dark-shade);
+}
+
+label {
+  color: var(--dark-shade);
 }
 
 body {

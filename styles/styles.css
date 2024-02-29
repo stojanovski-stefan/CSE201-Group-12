@@ -14,8 +14,26 @@ section {
   background-color: var(--main-color);
 }
 
-input {
+#first-name-field,
+#last-name-field,
+#email-field,
+#username-field,
+#password-field {
   background-color: var(--light-shade);
+  color: var(--dark-shade);
+}
+
+#card {
+  border: 2px solid var(--dark-shade);
+  border-radius: 1em;
+  /* background-color: var(--dark-shae); */
+}
+
+a {
+  color: var(--light-accent);
+}
+
+#sign-up-header {
   color: var(--dark-shade);
 }
 

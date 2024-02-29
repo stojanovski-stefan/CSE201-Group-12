@@ -10,14 +10,6 @@ section {
   padding: 60px 0;
 }
 
-#submit-button {
-  background-color: var(--main-color);
-}
-
-input {
-  background-color: var(--light-shade);
-}
-
 body {
   background-color: var(--light-shade);
 }

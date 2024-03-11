@@ -30,3 +30,27 @@ body {
 #sidebar-link {
   background-color: var(--light-shade);
 }
+
+#apply-filter-button {
+  background-color: var(--dark-accent);
+  color: var(--light-shade);
+}
+
+#apply-filter-button:hover {
+  background-color: #4b243c;
+}
+
+input[type="checkbox"] {
+  background-color: var(--light-shade);
+  border-color: var(--dark-shade);
+}
+
+input[type="checkbox"]:checked {
+  background-color: var(--dark-accent);
+  border-color: var(--dark-accent);
+}
+
+input[type="number"] {
+  background-color: var(--light-shade);
+  border-color: var(--dark-shade);
+}

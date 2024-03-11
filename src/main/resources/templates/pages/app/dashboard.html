@@ -79,12 +79,6 @@
                 <li>
                   <a href="#" class="nav-link link-dark">
                     <svg class="bi me-2" width="16" height="16"></svg>
-                    Account
-                  </a>
-                </li>
-                <li>
-                  <a href="#" class="nav-link link-dark">
-                    <svg class="bi me-2" width="16" height="16"></svg>
                     Orders
                   </a>
                 </li>
@@ -139,6 +133,7 @@
                     style=""
                   >
                     <li><a class="dropdown-item" href="#">Sell...</a></li>
+                    <li><a class="dropdown-item" href="#">Profile</a></li>
                     <li><a class="dropdown-item" href="#">Settings</a></li>
                     <li><hr class="dropdown-divider" /></li>
                     <li><a class="dropdown-item" href="#">Sign out</a></li>
@@ -163,150 +158,149 @@
 
     <!-- Filters -->
     <section class="container container-fluid vh-100" style="margin: 0">
-      <div class="row h-100">
-        <div class="col-md-3 border-end">
-          <div class="affix">
-            <h6 class="pt-3">Filters</h6>
+      <div class="row">
+        <aside id="aside" class="col-md-3 sticky-top border-end">
+          <h5 class="pt-3">Filters</h5>
+          <hr />
+          <!-- FILTER FORM -->
+          <form action="#" method="post">
+            <div class="form-check">
+              <input
+                class="form-check-input border-2"
+                type="checkbox"
+                value=""
+                id="shirts-checkbox"
+                name="ClothingType"
+              />
+              <label class="form-check-label" for="shirts-checkbox">
+                Shirts
+              </label>
+            </div>
+            <div class="form-check">
+              <input
+                class="form-check-input border-2"
+                type="checkbox"
+                value="Pants"
+                id="pants-checkbox"
+                name="ClothingType"
+              />
+              <label class="form-check-label" for="pants-checkbox">
+                Pants
+              </label>
+            </div>
+            <div class="form-check">
+              <input
+                class="form-check-input border-2"
+                type="checkbox"
+                value="Pants"
+                id="jackets-checkbox"
+                name="ClothingType"
+              />
+              <label class="form-check-label" for="jackets-checkbox">
+                Jackets
+              </label>
+            </div>
+            <div class="form-check">
+              <input
+                class="form-check-input border-2"
+                type="checkbox"
+                value="Pants"
+                id="shoes-checkbox"
+                name="ClothingType"
+              />
+              <label class="form-check-label" for="shoes-checkbox">
+                Shoes
+              </label>
+            </div>
+            <div class="form-check">
+              <input
+                class="form-check-input border-2"
+                type="checkbox"
+                value="Pants"
+                id="accessories-checkbox"
+                name="ClothingType"
+              />
+              <label class="form-check-label" for="accessories-checkbox">
+                Accessories
+              </label>
+            </div>
             <hr />
-            <!-- FILTER FORM -->
-            <form action="#" method="post">
-              <div class="form-check">
-                <input
-                  class="form-check-input border-2"
-                  type="checkbox"
-                  value=""
-                  id="shirts-checkbox"
-                  name="ClothingType"
-                />
-                <label class="form-check-label" for="shirts-checkbox">
-                  Shirts
-                </label>
-              </div>
-              <div class="form-check">
-                <input
-                  class="form-check-input border-2"
-                  type="checkbox"
-                  value="Pants"
-                  id="pants-checkbox"
-                  name="ClothingType"
-                />
-                <label class="form-check-label" for="pants-checkbox">
-                  Pants
-                </label>
-              </div>
-              <div class="form-check">
-                <input
-                  class="form-check-input border-2"
-                  type="checkbox"
-                  value="Pants"
-                  id="jackets-checkbox"
-                  name="ClothingType"
-                />
-                <label class="form-check-label" for="jackets-checkbox">
-                  Jackets
-                </label>
-              </div>
-              <div class="form-check">
-                <input
-                  class="form-check-input border-2"
-                  type="checkbox"
-                  value="Pants"
-                  id="shoes-checkbox"
-                  name="ClothingType"
-                />
-                <label class="form-check-label" for="shoes-checkbox">
-                  Shoes
-                </label>
-              </div>
-              <div class="form-check">
-                <input
-                  class="form-check-input border-2"
-                  type="checkbox"
-                  value="Pants"
-                  id="accessories-checkbox"
-                  name="ClothingType"
-                />
-                <label class="form-check-label" for="accessories-checkbox">
-                  Accessories
-                </label>
-              </div>
-              <hr />
-              <!-- Price range -->
-              <h6 class="pb-2">Price Range</h6>
-              <input
-                class="form-control mb-2"
-                type="number"
-                name="minimumPrice"
-                id="min-price-input"
-                placeholder="min"
-              />
-              <input
-                class="form-control mb-2"
-                type="number"
-                name="maximumPrice"
-                id="max-price-input"
-                placeholder="max"
-              />
-              <!-- apply filter button -->
-              <input
-                type="submit"
-                class="form-control btn"
-                id="apply-filter-button"
-                value="Apply"
-              />
-            </form>
-          </div>
-        </div>
-        <div class="col-md-9">
+            <!-- Price range -->
+            <h6 class="pb-2">Price Range</h6>
+            <input
+              class="form-control mb-2"
+              type="number"
+              name="minimumPrice"
+              id="min-price-input"
+              placeholder="min"
+            />
+            <input
+              class="form-control mb-2"
+              type="number"
+              name="maximumPrice"
+              id="max-price-input"
+              placeholder="max"
+            />
+            <!-- apply filter button -->
+            <input
+              type="submit"
+              class="form-control btn"
+              id="apply-filter-button"
+              value="Apply"
+            />
+          </form>
+        </aside>
+        <div class="col-md-9 p-5">
           <div class="row row-cols-1 row-cols-md-3 g-4">
             <div class="col">
-              <div class="card">
-                <img src="..." class="card-img-top" alt="..." />
+              <div class="card h-100">
+                <img
+                  src="https://images.unsplash.com/photo-1588099768531-a72d4a198538?w=900&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTF8fGNsb3RoaW5nfGVufDB8fDB8fHww"
+                  class="card-img-top"
+                  alt="..."
+                />
                 <div class="card-body">
-                  <h5 class="card-title">Card title</h5>
-                  <p class="card-text">
-                    This is a longer card with supporting text below as a
-                    natural lead-in to additional content. This content is a
-                    little bit longer.
-                  </p>
+                  <h5 class="card-title">Jordan 1 Retro Off-White</h5>
+                  <p class="card-text text-success">$500</p>
                 </div>
               </div>
             </div>
             <div class="col">
-              <div class="card">
-                <img src="..." class="card-img-top" alt="..." />
+              <div class="card h-100">
+                <img
+                  src="https://images.unsplash.com/photo-1576566588028-4147f3842f27?q=80&w=2400&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+                  class="card-img-top"
+                  alt="..."
+                />
                 <div class="card-body">
-                  <h5 class="card-title">Card title</h5>
-                  <p class="card-text">
-                    This is a longer card with supporting text below as a
-                    natural lead-in to additional content. This content is a
-                    little bit longer.
-                  </p>
+                  <h5 class="card-title">Graphic T-Shirt</h5>
+                  <p class="card-text text-success">$10</p>
                 </div>
               </div>
             </div>
             <div class="col">
-              <div class="card">
-                <img src="..." class="card-img-top" alt="..." />
+              <div class="card h-100">
+                <img
+                  src="https://images.unsplash.com/photo-1434389677669-e08b4cac3105?q=80&w=3220&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+                  class="card-img-top"
+                  alt="..."
+                />
                 <div class="card-body">
-                  <h5 class="card-title">Card title</h5>
-                  <p class="card-text">
-                    This is a longer card with supporting text below as a
-                    natural lead-in to additional content.
-                  </p>
+                  <h5 class="card-title">Women's Sweater</h5>
+                  <p class="card-text text-success">$23</p>
                 </div>
               </div>
             </div>
             <div class="col">
-              <div class="card">
-                <img src="..." class="card-img-top" alt="..." />
+              <div class="card h-100">
+                <img
+                  src="https://images.unsplash.com/photo-1618354691551-44de113f0164?q=80&w=2586&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+                  class="card-img-top"
+                  alt="..."
+                />
                 <div class="card-body">
-                  <h5 class="card-title">Card title</h5>
-                  <p class="card-text">
-                    This is a longer card with supporting text below as a
-                    natural lead-in to additional content. This content is a
-                    little bit longer.
-                  </p>
+                  <h5 class="card-title">705 Crewneck</h5>
+                  <p class="card-text text-success">$50</p>
                 </div>
               </div>
             </div>

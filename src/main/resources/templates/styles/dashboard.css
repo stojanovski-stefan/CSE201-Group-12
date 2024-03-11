@@ -40,6 +40,12 @@ body {
   background-color: #4b243c;
 }
 
+aside {
+  height: 100dvh;
+  position: sticky;
+  top: 0;
+}
+
 input[type="checkbox"] {
   background-color: var(--light-shade);
   border-color: var(--dark-shade);
@@ -53,4 +59,13 @@ input[type="checkbox"]:checked {
 input[type="number"] {
   background-color: var(--light-shade);
   border-color: var(--dark-shade);
+}
+
+.card {
+  background-color: var(--dark-shade);
+  color: var(--light-shade);
+}
+
+.card > img {
+  height: 300px;
 }

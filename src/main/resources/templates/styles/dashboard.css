@@ -40,6 +40,10 @@ body {
   background-color: #4b243c;
 }
 
+#search-bar {
+  background-color: var(--light-shade);
+}
+
 aside {
   height: 100dvh;
   position: sticky;

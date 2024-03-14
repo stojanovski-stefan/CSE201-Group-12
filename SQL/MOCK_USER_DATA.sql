@@ -3,7 +3,8 @@ create table MOCK_USER_DATA (
 	first_name VARCHAR(50),
 	last_name VARCHAR(50),
 	password VARCHAR(50),
-	username VARCHAR(50)
+	username VARCHAR(50),
+    email VARCHAR(50)
 );
 insert into MOCK_USER_DATA (id, first_name, last_name, password, username) values (1, 'Truman', 'Wands', 'f7@U_~pZ*s$', 'twands0');
 insert into MOCK_USER_DATA (id, first_name, last_name, password, username) values (2, 'Jinny', 'Joy', 'i0?\pZrK', 'jjoy1');

@@ -13,6 +13,8 @@
     <li>Spring Boot</li>
 </ul>
 <h3>Backend</h3>
+    <li>Spring Boot</li>
+    <li>RestAPI</li>
 <ul>
     <li>...</li>
 </ul>

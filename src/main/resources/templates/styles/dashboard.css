@@ -6,13 +6,6 @@
   --dark-shade: #1c161f;
 }
 
-@media (max-width: 700px) {
-  aside {
-    position: relative; /* Remove sticky behavior */
-    height: auto;
-  }
-}
-
 body {
   background-color: var(--light-shade);
 }
@@ -68,12 +61,6 @@ body {
 
 #buy-button:hover {
   background-color: #264bc6;
-}
-
-aside {
-  height: 100dvh;
-  position: sticky;
-  top: 0;
 }
 
 input[type="checkbox"] {

@@ -6,6 +6,13 @@
   --dark-shade: #1c161f;
 }
 
+@media (max-width: 700px) {
+  aside {
+    position: relative; /* Remove sticky behavior */
+    height: auto;
+  }
+}
+
 body {
   background-color: var(--light-shade);
 }
@@ -16,6 +23,17 @@ body {
 
 #navbar-title {
   color: var(--light-shade);
+}
+
+#search-button {
+  background-color: var(--main-color);
+  border-color: var(--main-color);
+  color: var(--light-shade);
+}
+
+#search-button:hover {
+  background-color: #3e5995;
+  border-color: #3e5995;
 }
 
 #menu-button {
@@ -44,6 +62,14 @@ body {
   background-color: var(--light-shade);
 }
 
+#buy-button {
+  background-color: var(--main-color);
+}
+
+#buy-button:hover {
+  background-color: #264bc6;
+}
+
 aside {
   height: 100dvh;
   position: sticky;
@@ -65,6 +91,11 @@ input[type="number"] {
   border-color: var(--dark-shade);
 }
 
+.modal-content {
+  /* background-color: var(--light-shade); */
+  color: var(--dark-shade);
+}
+
 .card {
   background-color: var(--dark-shade);
   color: var(--light-shade);
@@ -72,4 +103,29 @@ input[type="number"] {
 
 .card > img {
   height: 300px;
+  /* object-fit: cover;
+  object-position: 25% 25%; */
+}
+
+.carousel-item > img {
+  height: 600px;
+  object-fit: cover;
+  object-position: 25% 25%;
+}
+
+.card:hover {
+  cursor: pointer;
+}
+
+a.page-link {
+  color: var(--light-accent);
+  background-color: var(--light-shade);
+}
+
+a.page-link:hover {
+  color: var(--light-accent);
+}
+
+a {
+  color: var(--main-color);
 }

@@ -120,10 +120,13 @@ input[type="number"] {
 a.page-link {
   color: var(--light-accent);
   background-color: var(--light-shade);
+  border-color: var(--dark-shade);
 }
 
 a.page-link:hover {
   color: var(--light-accent);
+  background-color: #d5dacf;
+  border-color: var(--dark-shade);
 }
 
 a {

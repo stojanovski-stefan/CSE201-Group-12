@@ -1,0 +1,305 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Squib | Sell Product</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH"
+      crossorigin="anonymous"
+    />
+    <link rel="stylesheet" href="../../styles/app.css" />
+  </head>
+  <body>
+    <nav id="navbar" class="navbar px-3 py-3 navbar-dark">
+      <div class="container-fluid">
+        <!-- Side menu button -->
+        <button
+          class="btn"
+          style="padding: 0; margin: 0"
+          type="button"
+          data-bs-toggle="offcanvas"
+          data-bs-target="#offcanvasWithBothOptions"
+          aria-controls="offcanvasWithBothOptions"
+        >
+          <svg
+            id="menu-button"
+            xmlns="http://www.w3.org/2000/svg"
+            height="30"
+            viewBox="0 -960 960 960"
+            width="30"
+          >
+            <path
+              d="M160-240q-17 0-28.5-11.5T120-280q0-17 11.5-28.5T160-320h640q17 0 28.5 11.5T840-280q0 17-11.5 28.5T800-240H160Zm0-200q-17 0-28.5-11.5T120-480q0-17 11.5-28.5T160-520h640q17 0 28.5 11.5T840-480q0 17-11.5 28.5T800-440H160Zm0-200q-17 0-28.5-11.5T120-680q0-17 11.5-28.5T160-720h640q17 0 28.5 11.5T840-680q0 17-11.5 28.5T800-640H160Z"
+            />
+          </svg>
+        </button>
+        <!-- Side Menu -->
+        <div
+          class="offcanvas offcanvas-start"
+          data-bs-scroll="true"
+          tabindex="-1"
+          id="offcanvasWithBothOptions"
+          aria-labelledby="offcanvasWithBothOptionsLabel"
+        >
+          <div class="offcanvas-header">
+            <button
+              type="button"
+              class="btn-close text-reset"
+              data-bs-dismiss="offcanvas"
+              aria-label="Close"
+            ></button>
+          </div>
+          <div class="offcanvas-body">
+            <div id="sidebar-list" class="d-flex flex-column flex-shrink-0 p-3">
+              <a
+                href="/"
+                class="d-flex align-items-center mb-3 mb-md-0 me-md-auto link-dark text-decoration-none"
+              >
+                <svg class="bi me-2" width="40" height="32"></svg>
+                <span class="fs-4">Squib</span>
+              </a>
+              <hr />
+              <!-- Menu options -->
+              <ul class="nav nav-pills d-flex flex-column mb-auto">
+                <li class="nav-item">
+                  <a href="#" class="nav-link link-dark" aria-current="page">
+                    <svg class="bi me-2" width="16" height="16"></svg>
+                    Dashboard
+                  </a>
+                </li>
+                <li>
+                  <a href="#" class="nav-link link-dark">
+                    <svg class="bi me-2" width="16" height="16"></svg>
+                    Orders
+                  </a>
+                </li>
+                <li>
+                  <a href="#" class="nav-link link-dark">
+                    <svg class="bi me-2" width="16" height="16"></svg>
+                    My Listing
+                  </a>
+                </li>
+                <li>
+                  <a href="#" class="nav-link link-dark">
+                    <svg class="bi me-2" width="16" height="16"></svg>
+                    Saved
+                  </a>
+                </li>
+              </ul>
+              <hr />
+              <!-- Profile Section -->
+              <footer class="d-flex flex-column align-items-bottom">
+                <div class="dropdown">
+                  <a
+                    href="#"
+                    class="d-flex align-items-center link-dark text-decoration-none dropdown-toggle"
+                    id="dropdownUser2"
+                    data-bs-toggle="dropdown"
+                    aria-expanded="false"
+                  >
+                    <!-- <img
+                      src="https://github.com/mdo.png"
+                      alt=""
+                      width="32"
+                      height="32"
+                      class="rounded-circle me-2"
+                    /> -->
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      height="32"
+                      viewBox="0 -960 960 960"
+                      width="32"
+                      class="rounded-circle me-2"
+                    >
+                      <path
+                        d="M234-276q51-39 114-61.5T480-360q69 0 132 22.5T726-276q35-41 54.5-93T800-480q0-133-93.5-226.5T480-800q-133 0-226.5 93.5T160-480q0 59 19.5 111t54.5 93Zm246-164q-59 0-99.5-40.5T340-580q0-59 40.5-99.5T480-720q59 0 99.5 40.5T620-580q0 59-40.5 99.5T480-440Zm0 360q-83 0-156-31.5T197-197q-54-54-85.5-127T80-480q0-83 31.5-156T197-763q54-54 127-85.5T480-880q83 0 156 31.5T763-763q54 54 85.5 127T880-480q0 83-31.5 156T763-197q-54 54-127 85.5T480-80Zm0-80q53 0 100-15.5t86-44.5q-39-29-86-44.5T480-280q-53 0-100 15.5T294-220q39 29 86 44.5T480-160Zm0-360q26 0 43-17t17-43q0-26-17-43t-43-17q-26 0-43 17t-17 43q0 26 17 43t43 17Zm0-60Zm0 360Z"
+                      />
+                    </svg>
+                    <strong>Stefan Stojanovski</strong>
+                  </a>
+                  <!-- Profile Dropdown -->
+                  <ul
+                    class="dropdown-menu text-small shadow"
+                    aria-labelledby="dropdownUser2"
+                    style=""
+                  >
+                    <li><a class="dropdown-item" href="#">Sell...</a></li>
+                    <li><a class="dropdown-item" href="#">Profile</a></li>
+                    <li><a class="dropdown-item" href="#">Settings</a></li>
+                    <li><hr class="dropdown-divider" /></li>
+                    <li><a class="dropdown-item" href="#">Sign out</a></li>
+                  </ul>
+                </div>
+              </footer>
+            </div>
+          </div>
+        </div>
+      </div>
+    </nav>
+
+    <div class="container my-5">
+      <div class="row">
+        <div class="col-8">
+          <h3>Add New Product</h3>
+        </div>
+        <div class="col-2">
+          <button type="button" class="btn btn-secondary w-100">
+            Save Draft
+          </button>
+        </div>
+        <div class="col-2">
+          <button type="button" class="btn btn-primary w-100">Publish</button>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-md-5">
+          <h4 class="mt-3">Information</h4>
+          <form action="" method="post">
+            <div class="mb-3">
+              <label for="item-name-input" class="form-label">Title</label>
+              <input
+                type="text"
+                class="form-control"
+                name="item-name"
+                id="item-name-input"
+              />
+            </div>
+            <div class="mb-3">
+              <label for="item-description-input" class="form-label"
+                >Description</label
+              >
+              <textarea
+                class="form-control"
+                name="item-description"
+                id="item-description-input"
+                rows="3"
+              ></textarea>
+            </div>
+            <div class="mb-3">
+              <label for="formFile" class="form-label">Pictures</label>
+              <input class="form-control" type="file" id="formFile" />
+            </div>
+            <div class="mb-3">
+              <label for="price-input" class="form-label">Price</label>
+              <input
+                type="number"
+                class="form-control"
+                name="price"
+                id="price-input"
+              />
+            </div>
+            <div class="mb-3">
+              <label for="brand-input" class="form-label">Brand</label>
+              <input
+                type="text"
+                class="form-control"
+                name="brand"
+                id="brand-input"
+              />
+            </div>
+            <div class="mb-3">
+              <label for="size-input" class="form-label">Size</label>
+              <input
+                type="text"
+                class="form-control"
+                name="size"
+                id="size-input"
+              />
+            </div>
+            <div class="mb-3">
+              <label for="gender-input" class="form-label">Gender</label>
+              <input
+                type="text"
+                class="form-control"
+                name="gender"
+                id="gender-input"
+              />
+            </div>
+            <div class="mb-3">
+              <label for="condition-input">Condition</label>
+              <select
+                id="condition-input"
+                name="condition"
+                class="form-select"
+                aria-label="Condition"
+              >
+                <option selected>Select</option>
+                <option value="1">Perfect</option>
+                <option value="2">Good</option>
+                <option value="3">Used</option>
+                <option value="4">Poor</option>
+              </select>
+            </div>
+          </form>
+        </div>
+        <div class="col-md-7">
+          <h4 class="mt-3">Preview</h4>
+          <div class="container h-100">
+            <div class="row border rounded">
+              <div class="col-9">
+                <div
+                  class="d-flex justify-content-center align-items-center h-100"
+                >
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    class="w-50"
+                    viewBox="0 -960 960 960"
+                  >
+                    <path
+                      d="M200-120q-33 0-56.5-23.5T120-200v-560q0-33 23.5-56.5T200-840h560q33 0 56.5 23.5T840-760v560q0 33-23.5 56.5T760-120H200Zm0-80h560v-560H200v560Zm40-80h480L570-480 450-320l-90-120-120 160Zm-40 80v-560 560Z"
+                    />
+                  </svg>
+                </div>
+              </div>
+              <div class="col-3">
+                <h5 class="display-6">Price: <span>$0.00</span></h5>
+
+                <table class="table" style="padding: 0; margin: 0">
+                  <tbody>
+                    <tr>
+                      <td>Status:</td>
+                      <td>
+                        <span class="text-success">Available</span>
+                      </td>
+                    </tr>
+                    <tr>
+                      <td>Brand:</td>
+                      <td>NA</td>
+                    </tr>
+                    <tr>
+                      <td>Size:</td>
+                      <td>NA</td>
+                    </tr>
+                    <tr>
+                      <td>Gender:</td>
+                      <td>NA</td>
+                    </tr>
+                    <tr>
+                      <td>Condition:</td>
+                      <td>NA</td>
+                    </tr>
+                    <tr>
+                      <td>Seller:</td>
+                      <td><a href="#">Stefan S</a></td>
+                    </tr>
+                  </tbody>
+                </table>
+                <p style="margin-bottom: 0; padding-bottom: 0">Description:</p>
+                <p style="margin-top: 0; padding-top: 0">NA</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
+      crossorigin="anonymous"
+    ></script>
+  </body>
+</html>

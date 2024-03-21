@@ -1,0 +1,121 @@
+:root {
+  --main-color: #5775b4;
+  --light-accent: #9e7861;
+  --light-shade: #f5f8f2;
+  --dark-accent: #673655;
+  --dark-shade: #1c161f;
+}
+
+body {
+  background-color: var(--light-shade);
+}
+
+#navbar {
+  background-color: var(--dark-shade);
+}
+
+#navbar-title {
+  color: var(--light-shade);
+}
+
+#search-button {
+  background-color: var(--main-color);
+  border-color: var(--main-color);
+  color: var(--light-shade);
+}
+
+#search-button:hover {
+  background-color: #3e5995;
+  border-color: #3e5995;
+}
+
+#menu-button {
+  fill: var(--light-shade);
+}
+
+#offcanvasWithBothOptions {
+  background-color: var(--light-shade);
+  color: var(--dark-shade);
+}
+
+#sidebar-link {
+  background-color: var(--light-shade);
+}
+
+#apply-filter-button {
+  background-color: var(--dark-accent);
+  color: var(--light-shade);
+}
+
+#apply-filter-button:hover {
+  background-color: #4b243c;
+}
+
+#search-bar {
+  background-color: var(--light-shade);
+}
+
+#buy-button {
+  background-color: var(--main-color);
+}
+
+#buy-button:hover {
+  background-color: #264bc6;
+}
+
+input[type="checkbox"] {
+  background-color: var(--light-shade);
+  border-color: var(--dark-shade);
+}
+
+input[type="checkbox"]:checked {
+  background-color: var(--dark-accent);
+  border-color: var(--dark-accent);
+}
+
+input[type="number"] {
+  background-color: var(--light-shade);
+  border-color: var(--dark-shade);
+}
+
+.modal-content {
+  /* background-color: var(--light-shade); */
+  color: var(--dark-shade);
+}
+
+.card {
+  background-color: var(--dark-shade);
+  color: var(--light-shade);
+}
+
+.card > img {
+  height: 300px;
+  /* object-fit: cover;
+  object-position: 25% 25%; */
+}
+
+.carousel-item > img {
+  height: 600px;
+  object-fit: cover;
+  object-position: 25% 25%;
+}
+
+.card:hover {
+  cursor: pointer;
+}
+
+a.page-link {
+  color: var(--light-accent);
+  background-color: var(--light-shade);
+  border-color: var(--dark-shade);
+}
+
+a.page-link:hover {
+  color: var(--light-accent);
+  background-color: #d5dacf;
+  border-color: var(--dark-shade);
+}
+
+a {
+  color: var(--main-color);
+}

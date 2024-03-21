@@ -1,0 +1,704 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Squib | Home</title>
+    <!-- bootstrap -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH"
+      crossorigin="anonymous"
+    />
+    <link rel="stylesheet" href="../../styles/app.css" />
+    <script>
+      function openModal(id) {
+        let modal = new bootstrap.Modal(document.getElementById(`${id}-Modal`));
+        modal.show();
+      }
+    </script>
+  </head>
+  <body>
+    <!-- Navigation -->
+    <nav id="navbar" class="navbar px-3 py-3 navbar-dark">
+      <div class="container-fluid">
+        <!-- Side menu button -->
+        <button
+          class="btn"
+          style="padding: 0; margin: 0"
+          type="button"
+          data-bs-toggle="offcanvas"
+          data-bs-target="#offcanvasWithBothOptions"
+          aria-controls="offcanvasWithBothOptions"
+        >
+          <svg
+            id="menu-button"
+            xmlns="http://www.w3.org/2000/svg"
+            height="30"
+            viewBox="0 -960 960 960"
+            width="30"
+          >
+            <path
+              d="M160-240q-17 0-28.5-11.5T120-280q0-17 11.5-28.5T160-320h640q17 0 28.5 11.5T840-280q0 17-11.5 28.5T800-240H160Zm0-200q-17 0-28.5-11.5T120-480q0-17 11.5-28.5T160-520h640q17 0 28.5 11.5T840-480q0 17-11.5 28.5T800-440H160Zm0-200q-17 0-28.5-11.5T120-680q0-17 11.5-28.5T160-720h640q17 0 28.5 11.5T840-680q0 17-11.5 28.5T800-640H160Z"
+            />
+          </svg>
+        </button>
+        <!-- Side Menu -->
+        <div
+          class="offcanvas offcanvas-start"
+          data-bs-scroll="true"
+          tabindex="-1"
+          id="offcanvasWithBothOptions"
+          aria-labelledby="offcanvasWithBothOptionsLabel"
+        >
+          <div class="offcanvas-header">
+            <button
+              type="button"
+              class="btn-close text-reset"
+              data-bs-dismiss="offcanvas"
+              aria-label="Close"
+            ></button>
+          </div>
+          <div class="offcanvas-body">
+            <div id="sidebar-list" class="d-flex flex-column flex-shrink-0 p-3">
+              <a
+                href="/"
+                class="d-flex align-items-center mb-3 mb-md-0 me-md-auto link-dark text-decoration-none"
+              >
+                <svg class="bi me-2" width="40" height="32"></svg>
+                <span class="fs-4">Squib</span>
+              </a>
+              <hr />
+              <!-- Menu options -->
+              <ul class="nav nav-pills d-flex flex-column mb-auto">
+                <li class="nav-item">
+                  <a
+                    href="#"
+                    style="background-color: #5775b4"
+                    class="nav-link active"
+                    aria-current="page"
+                  >
+                    <svg class="bi me-2" width="16" height="16"></svg>
+                    Dashboard
+                  </a>
+                </li>
+                <li>
+                  <a href="#" class="nav-link link-dark">
+                    <svg class="bi me-2" width="16" height="16"></svg>
+                    Orders
+                  </a>
+                </li>
+                <li>
+                  <a href="#" class="nav-link link-dark">
+                    <svg class="bi me-2" width="16" height="16"></svg>
+                    My Listing
+                  </a>
+                </li>
+                <li>
+                  <a href="#" class="nav-link link-dark">
+                    <svg class="bi me-2" width="16" height="16"></svg>
+                    Saved
+                  </a>
+                </li>
+              </ul>
+              <hr />
+              <!-- Profile Section -->
+              <footer class="d-flex flex-column align-items-bottom">
+                <div class="dropdown">
+                  <a
+                    href="#"
+                    class="d-flex align-items-center link-dark text-decoration-none dropdown-toggle"
+                    id="dropdownUser2"
+                    data-bs-toggle="dropdown"
+                    aria-expanded="false"
+                  >
+                    <!-- <img
+                      src="https://github.com/mdo.png"
+                      alt=""
+                      width="32"
+                      height="32"
+                      class="rounded-circle me-2"
+                    /> -->
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      height="32"
+                      viewBox="0 -960 960 960"
+                      width="32"
+                      class="rounded-circle me-2"
+                    >
+                      <path
+                        d="M234-276q51-39 114-61.5T480-360q69 0 132 22.5T726-276q35-41 54.5-93T800-480q0-133-93.5-226.5T480-800q-133 0-226.5 93.5T160-480q0 59 19.5 111t54.5 93Zm246-164q-59 0-99.5-40.5T340-580q0-59 40.5-99.5T480-720q59 0 99.5 40.5T620-580q0 59-40.5 99.5T480-440Zm0 360q-83 0-156-31.5T197-197q-54-54-85.5-127T80-480q0-83 31.5-156T197-763q54-54 127-85.5T480-880q83 0 156 31.5T763-763q54 54 85.5 127T880-480q0 83-31.5 156T763-197q-54 54-127 85.5T480-80Zm0-80q53 0 100-15.5t86-44.5q-39-29-86-44.5T480-280q-53 0-100 15.5T294-220q39 29 86 44.5T480-160Zm0-360q26 0 43-17t17-43q0-26-17-43t-43-17q-26 0-43 17t-17 43q0 26 17 43t43 17Zm0-60Zm0 360Z"
+                      />
+                    </svg>
+                    <strong>Stefan Stojanovski</strong>
+                  </a>
+                  <!-- Profile Dropdown -->
+                  <ul
+                    class="dropdown-menu text-small shadow"
+                    aria-labelledby="dropdownUser2"
+                    style=""
+                  >
+                    <li>
+                      <a class="dropdown-item" href="./sell.html">Sell...</a>
+                    </li>
+                    <li><a class="dropdown-item" href="#">Profile</a></li>
+                    <li><a class="dropdown-item" href="#">Settings</a></li>
+                    <li><hr class="dropdown-divider" /></li>
+                    <li><a class="dropdown-item" href="#">Sign out</a></li>
+                  </ul>
+                </div>
+              </footer>
+            </div>
+          </div>
+        </div>
+        <!-- Search Bar -->
+        <form class="d-flex">
+          <input
+            id="search-bar"
+            class="form-control me-2"
+            type="search"
+            placeholder="Search"
+            aria-label="Search"
+          />
+          <button class="btn btn-secondary" id="search-button" type="submit">
+            Search
+          </button>
+        </form>
+      </div>
+    </nav>
+
+    <!-- Filters -->
+    <section class="container container-fluid mw-100 vh-100" style="margin: 0">
+      <div class="row">
+        <aside id="aside" class="col-md-2 border-end">
+          <!-- FILTER FORM -->
+          <form class="sticky-md-top" action="#" method="post">
+            <h5 class="pt-3">Filters</h5>
+            <hr class="sticky-md-top" />
+            <div class="form-check">
+              <input
+                class="form-check-input border-2"
+                type="checkbox"
+                value=""
+                id="shirts-checkbox"
+                name="ClothingType"
+              />
+              <label class="form-check-label" for="shirts-checkbox">
+                Shirts
+              </label>
+            </div>
+            <div class="form-check">
+              <input
+                class="form-check-input border-2"
+                type="checkbox"
+                value="Pants"
+                id="pants-checkbox"
+                name="ClothingType"
+              />
+              <label class="form-check-label" for="pants-checkbox">
+                Pants
+              </label>
+            </div>
+            <div class="form-check">
+              <input
+                class="form-check-input border-2"
+                type="checkbox"
+                value="Pants"
+                id="jackets-checkbox"
+                name="ClothingType"
+              />
+              <label class="form-check-label" for="jackets-checkbox">
+                Jackets
+              </label>
+            </div>
+            <div class="form-check">
+              <input
+                class="form-check-input border-2"
+                type="checkbox"
+                value="Pants"
+                id="shoes-checkbox"
+                name="ClothingType"
+              />
+              <label class="form-check-label" for="shoes-checkbox">
+                Shoes
+              </label>
+            </div>
+            <div class="form-check">
+              <input
+                class="form-check-input border-2"
+                type="checkbox"
+                value="Pants"
+                id="accessories-checkbox"
+                name="ClothingType"
+              />
+              <label class="form-check-label" for="accessories-checkbox">
+                Accessories
+              </label>
+            </div>
+            <hr />
+            <!-- Price range -->
+            <h6 class="pb-2">Price Range</h6>
+            <input
+              class="form-control mb-2"
+              type="number"
+              name="minimumPrice"
+              id="min-price-input"
+              placeholder="min"
+            />
+            <input
+              class="form-control mb-2"
+              type="number"
+              name="maximumPrice"
+              id="max-price-input"
+              placeholder="max"
+            />
+            <!-- apply filter button -->
+            <input
+              type="submit"
+              class="form-control btn"
+              id="apply-filter-button"
+              value="Apply"
+            />
+          </form>
+        </aside>
+        <div class="col-md-10 p-5">
+          <div class="row row-cols-1 row-cols-md-4 g-4">
+            <!-- start card -->
+            <div class="col">
+              <div
+                class="card h-100"
+                onclick="openModal(this.id)"
+                id="Jordan-1-Retro-Off-White"
+              >
+                <img
+                  src="https://images.unsplash.com/photo-1588099768531-a72d4a198538?w=900&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTF8fGNsb3RoaW5nfGVufDB8fDB8fHww"
+                  class="card-img-top"
+                  alt="..."
+                />
+                <div class="card-body">
+                  <h5 class="card-title">Jordan 1 Retro Off-White</h5>
+                  <p class="card-text">$500</p>
+                  <p class="card-text text-success">Available</p>
+                </div>
+              </div>
+            </div>
+            <div
+              class="modal fade"
+              id="Jordan-1-Retro-Off-White-Modal"
+              tabindex="-1"
+              aria-labelledby="exampleModalLabel"
+              aria-hidden="true"
+            >
+              <div class="modal-dialog modal-xl modal-dialog-centered">
+                <div class="modal-content">
+                  <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLabel">
+                      Jordan 1 Retro Off-White
+                    </h5>
+                    <button
+                      type="button"
+                      class="btn-close"
+                      data-bs-dismiss="modal"
+                      aria-label="Close"
+                    ></button>
+                  </div>
+                  <div class="modal-body">
+                    <div class="container">
+                      <div class="row">
+                        <div class="col-md-9">
+                          <div
+                            id="carouselExampleIndicators"
+                            class="carousel slide"
+                            data-bs-ride="carousel"
+                          >
+                            <div class="carousel-indicators">
+                              <button
+                                type="button"
+                                data-bs-target="#carouselExampleIndicators"
+                                data-bs-slide-to="0"
+                                class="active"
+                                aria-current="true"
+                                aria-label="Slide 1"
+                              ></button>
+                              <button
+                                type="button"
+                                data-bs-target="#carouselExampleIndicators"
+                                data-bs-slide-to="1"
+                                aria-label="Slide 2"
+                              ></button>
+                              <button
+                                type="button"
+                                data-bs-target="#carouselExampleIndicators"
+                                data-bs-slide-to="2"
+                                aria-label="Slide 3"
+                              ></button>
+                            </div>
+                            <div class="carousel-inner">
+                              <div class="carousel-item active">
+                                <img
+                                  src="https://images.unsplash.com/photo-1588099768531-a72d4a198538?w=900&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTF8fGNsb3RoaW5nfGVufDB8fDB8fHww"
+                                  class="d-block w-100"
+                                  alt="..."
+                                />
+                              </div>
+                              <div class="carousel-item">
+                                <img
+                                  src="https://images.unsplash.com/photo-1704677982224-89cd6d039fa6?q=80&w=3687&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+                                  class="d-block w-100"
+                                  alt="..."
+                                />
+                              </div>
+                              <div class="carousel-item">
+                                <img
+                                  src="https://images.unsplash.com/photo-1704677982215-a2248af6009b?q=80&w=3570&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+                                  class="d-block w-100"
+                                  alt="..."
+                                />
+                              </div>
+                            </div>
+                            <button
+                              class="carousel-control-prev"
+                              type="button"
+                              data-bs-target="#carouselExampleIndicators"
+                              data-bs-slide="prev"
+                            >
+                              <span
+                                class="carousel-control-prev-icon"
+                                aria-hidden="true"
+                              ></span>
+                              <span class="visually-hidden">Previous</span>
+                            </button>
+                            <button
+                              class="carousel-control-next"
+                              type="button"
+                              data-bs-target="#carouselExampleIndicators"
+                              data-bs-slide="next"
+                            >
+                              <span
+                                class="carousel-control-next-icon"
+                                aria-hidden="true"
+                              ></span>
+                              <span class="visually-hidden">Next</span>
+                            </button>
+                          </div>
+                        </div>
+                        <div class="col-md-3">
+                          <h5 class="display-6">Price: <span>$500.00</span></h5>
+
+                          <table class="table">
+                            <tbody>
+                              <tr>
+                                <td>Status:</td>
+                                <td>
+                                  <span class="text-success">Available</span>
+                                </td>
+                              </tr>
+                              <tr>
+                                <td>Brand:</td>
+                                <td>Nike</td>
+                              </tr>
+                              <tr>
+                                <td>Size:</td>
+                                <td>12</td>
+                              </tr>
+                              <tr>
+                                <td>Gender:</td>
+                                <td>Men</td>
+                              </tr>
+                              <tr>
+                                <td>Condition:</td>
+                                <td>Brand New</td>
+                              </tr>
+                              <tr>
+                                <td>Seller:</td>
+                                <td><a href="#">Stefan Stojanovski</a></td>
+                              </tr>
+                            </tbody>
+                          </table>
+                          <p style="margin-bottom: 0; padding-bottom: 0">
+                            Description:
+                          </p>
+                          <p style="margin-top: 0; padding-top: 0">
+                            Lorem ipsum dolor sit amet consectetur adipisicing
+                            elit. Voluptas corporis vel veniam, labore provident
+                            officia.
+                          </p>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="modal-footer">
+                    <button
+                      type="button"
+                      class="btn btn-secondary"
+                      data-bs-dismiss="modal"
+                    >
+                      Contact Seller
+                    </button>
+                    <button
+                      type="button"
+                      id="buy-button"
+                      class="btn btn-primary"
+                    >
+                      Buy
+                    </button>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <!-- END CARD -->
+
+            <div class="col">
+              <div
+                class="card h-100"
+                onclick="openModal(this.id)"
+                id="Graphic-T-Shirt"
+              >
+                <img
+                  src="https://images.unsplash.com/photo-1576566588028-4147f3842f27?q=80&w=2400&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+                  class="card-img-top"
+                  alt="..."
+                />
+                <div class="card-body">
+                  <h5 class="card-title">Graphic T-Shirt</h5>
+                  <p class="card-text">$10</p>
+                  <p class="card-text text-danger">Sold</p>
+                </div>
+              </div>
+            </div>
+            <div
+              class="modal fade"
+              id="Graphic-T-Shirt-Modal"
+              tabindex="-1"
+              aria-labelledby="exampleModalLabel"
+              aria-hidden="true"
+            >
+              <div class="modal-dialog modal-xl modal-dialog-centered">
+                <div class="modal-content">
+                  <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLabel">
+                      Graphic T-Shirt
+                    </h5>
+                    <button
+                      type="button"
+                      class="btn-close"
+                      data-bs-dismiss="modal"
+                      aria-label="Close"
+                    ></button>
+                  </div>
+                  <div class="modal-body">
+                    <div class="container">
+                      <div class="row">
+                        <div class="col-md-9">
+                          <div
+                            id="Graphic-T-Shirt-Carousel"
+                            class="carousel slide"
+                            data-bs-ride="carousel"
+                          >
+                            <div class="carousel-indicators">
+                              <button
+                                type="button"
+                                data-bs-target="#Graphic-T-Shirt-Carousel"
+                                data-bs-slide-to="0"
+                                class="active"
+                                aria-current="true"
+                                aria-label="Slide 1"
+                              ></button>
+                              <button
+                                type="button"
+                                data-bs-target="#Graphic-T-Shirt-Carousel"
+                                data-bs-slide-to="1"
+                                aria-label="Slide 2"
+                              ></button>
+                              <button
+                                type="button"
+                                data-bs-target="#Graphic-T-Shirt-Carousel"
+                                data-bs-slide-to="2"
+                                aria-label="Slide 3"
+                              ></button>
+                            </div>
+                            <div class="carousel-inner">
+                              <div class="carousel-item active">
+                                <img
+                                  src="https://images.unsplash.com/photo-1576566588028-4147f3842f27?q=80&w=2400&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+                                  class="d-block w-100"
+                                  alt="..."
+                                />
+                              </div>
+                              <div class="carousel-item">
+                                <img
+                                  src="data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/2wCEAAkGBxMTEhUTExMWFhUXFhcVFRcXFRgVFxcYGBgYFxcWFxcYHSggGB0lGxUWIzEhJSkrLi4uGB8zODMtNygtLisBCgoKDg0OGhAQGy0lHyUtLS0tLS0tLi0tLy0tLS0tLS0vLS8tLS4tLTAtLS0tLS0rLS0tLS0rLysyKy0tLTUtK//AABEIAOsA1wMBIgACEQEDEQH/xAAbAAEAAgMBAQAAAAAAAAAAAAAABAUBAgMGB//EADoQAAICAQMBBgMGBgIBBQEAAAECAAMRBBIhMQUTIkFRYTJxgQYUkaGx8CNCUsHR4SRiclOywtLxM//EABkBAQADAQEAAAAAAAAAAAAAAAABAgMEBf/EADIRAAICAQIEAwcEAgMBAAAAAAABAhEhA0ESMVFhBCJxE5GhscHR8DIzQoHh8SNSYgX/2gAMAwEAAhEDEQA/APrUREAREQBERAEREAREQBERAEREAREQBERAEREAREQBERAEREAREQBERAEREAREQBERAETBaaC4Hpz+/UyLB0icXsPt+I/zNlc+kcSJo6ROPen+k/lNWdz0AHz5kOSFM7kwDK+2jzck/pOlbAdP8SvtETwk2JHptz5zqLJdSTIo3iYBmZJAiIgCIiAIiIAiIgCIiAIiIAiYZsSE1rN04X18zIbSJSslvaB1M49/npx7mRgpJOOSMD5TlbU45JAmTmXUUSrM9cFvrgTg4s8lx8p0orswDvyD5EYMlKp85S7JKdrLJshfyMtnpB6yN3PpAIi6qyvqCy+xwR789RNB2n4s4OfeTNvkf2JyvVFUsxAVRkknAA8ySZZMgk09pq4w35zqKlbnj6Sl7Pspt3d024KRng+fTGeo4PIlnTTiTRBnUUbcMp5kgLvXcvB9JqeeIRGXkSpJz73B54PnJCv9Zu9QYZkWg48J+ksm0KJKsD0m0h6glGHp0Pz6ySLPX8R0minZRqjeJgGZliBERAEREAREwTAMznbeB5zhbqfITj3JPzlJTS5FlEO5b/H+Z0cYGZius5H5zewZmTtl6NVTAD59j09ePz/WY1GWYDyA/EzFzDYV9Bn6jkfpN/1kJE2dRcFGJkFm9pH1dyU1vbZ0RSx+Q585X9h/aRbAwtAVwC67TlWQDcdpPVgOo8xyPMKtWo7u671zJUJOLmlhVfa+RdlcAkngckngAepMg6HXVWsy1WByvJ28jB4yG6N08iZ4Ptr7Sai3vBYdlLg1rXWymw7kHh243Nnft3dNwPAkPszVXUsmXxYMrXaQdrMAO8pcZ8RGRkZ8QAYHoZE24w9olccNtdGrtda/ksNJ3TRrp6KlL2blU8pLunVO+V54XlPKvleNL25eNQdQlYfJIH8z2G07ErUDnAbAx/0Ese2+3PvGksR1CWHunUDIJHfVK2UJypBYeZzz6SsfTtRp67HVu4tViLFBOxu9sI3YHGVNZB9cyoorPhaqux696i27unO7DBwvnkjux0wBgcczq0oS9q/K0ou06bUsW/M+T4rdX/5Uayo1XpuEfMm3SeUnHzV+lc1w0rrGZOSrPt+zu1xpqbLGCndetQ3NsAPdmzJPpjPHqR06y1+zP2tr1LBDWUJOFbkoxxkdQCMjpxjjrnAngdXcyq9jq9aWcVWtW20EKquMYyrZX05wPSdezdSlZ03dsWHed98WWPdneqMwA5Ld2pOBgAnGBOHQ09TS0dOMotfpjm0sQ4pvl/FYq1lO0dOutLV1dSakn+qWHbty4YR57vNqObXmPsRSNs+WU9u6iu/NRLtv3ag5PdA2lsZQsMnJLADkKnoDPoP2d7W+81liAHRzXYB03bVYEZ5wVdTjy5GTjMvCakk+qtXurq/R81dOtjl1tCWld5p02tpVdeq3qywBxmcWXLD3kplkes+IS5iZ1dG5TOOht6qeok9Dz85D1FPIYeRktVkky6YPHGf30mEu9f8AU6q2RORSSpNFWrOoMzIbtt5HE7JeD++JdTTIcWdomAZmXKmt1oUZJwJW9+1nIGF8h6+8du0uVBUEgclR1I9pDq7RXaNpwP0PvM5vJaKJ4D+WPlM97YvVQR7SMmtyMjqOsm6DWiwYIwR1mZcwuvU8EEGZqYHA852t0oMjGnbIJRoPE59v/wAknTnwhj6D25xOGlGCTNr0L1lR1KFR9RiSiGeH7e+3SF3TcoQDGGr7wOCP58jG1v6euOpHQQO0tOun7g+JKdSgsrU5DUOQpZM+S5fjnI5HTmWH2b7cNKsorVvH/ErJ2PXYOHB4O7kef0OMAba3VnXaqmlkABzuQHdsp62uzYHLYVRxwcYma1NHUfsW3xbq1cWv5LyquHLtt2lSec9z0tbRftUlwJOntNPlF5d8XKkk03dYxS6GnUWMaatOupaor4w6LtznYX3fC3hPI9DL7s0aRNG1F6/ebLHNj1Vj4DwijeSBXhUHOQTzgESVrdQmmR9JoR3SV5N93Bd225KKT1bpufy+Ec/DWIXr7xLFK2btzADPFgVgcjPXJ8/L2noaWhp6Gm9V4SXFi03WW0rajbzUaq/SvI8R4zU8TrR0U7bairpqPFhJypOVJV5rv33cV9u3qgSqumlFG1UBawhR0G7wheP+p+sh29s6gOA2uZEcHY3d0bRzhS2UPAOVZRyuM8jk1bBj6+ygZJ/DOfpJWopDV7eACM5wPDxjf06FQA3sFPVADz+B8VDxUnH2aTSb/wC3KrVtc1aeMNPDNv8A6fg9TwcIzWpxZSp+XLUmnSeFLha6xa6FmO3NZTu3OLNnxV2oqngZ4sqAxkcg7WBE4/dNDrXIRW0esYkhgPC7clhx4Lec5U4Y7T6GR9O5s/49gVLE2ilskquWONNYT/KSvhPQbgBkHBjWV7RgqSclWRhzvHLhh5Hjdx5jj4p6fsITTVU965NenJp9GeQvF6uk1K7W1/qT6XtJdfd2h9vae3QApahYcvXaF/h222AbyxycMD4QDjwrx1JMagW0qyVb7LFHfWt3hrRS3G4nIAZioVQPEce09j2f2rmttJrH303Ka0uJ5G8YCWn6+Gz5BueW83r+ytRpbl03j1At2nTP8KO+CMPzjeqcljztBxPO8R4eUZuVNvm0pNcdUo08cMY+aTVrrVKj3vCeNjqQUG0ltJpPhu3JtO7k8JNp8s88ydT9oNWzVAMxvxsqrrPxnzewY2ngAkkbVwceZn0ShTxu+LAzj1xziVf2Y+za6UF3Is1Dj+JZjoP/AE6x/Kg/Pqfa3c8zGMXFVJ2+be3olsl73zfOlGtqQnLyR4Yrl19W938EqSOoENMiZIlmjM5hZidNs4vIBxvTIzNUXA9zz/gSSBk5+sx15llG2G6Fa4GJmZiamYlR2l2QCTZXw/mPJvmPX3lvEhpPmE6PL6Vfxxgf/X/E6UKQMg4PWS+0dNsfePhbg+x9frx+zMPjbnzHBx79D9ZztU6Nrsl9ma3eMN8Q/OSdS3EragAQfzllb4l69Oc/KERucUXjiSEwJB7LtyOevJ+g8/0liw4B9esnuN6KPtr7KabUv3liYs6b0YoxH/Yj4vLrmQrtDR2ZTY2nr/i2ba0LMWZ7GOF3E/yjliBjhTPVFZ5L7Y5bU0IfhVLbepHi8Fa8j2ez8Z06DnqSWm2+Hp6ZOfXa04S1EslVp69hpX4sOhJIJztPeM7468qST7kzlq3UXpgk71cHLFxgksuDsHGdw5J8vSbDd3lW9dyizJwcsQFbyIABx7zr2yo72p8MNxVxkoQFbvNhO1iRk2AA4xxPRn+8k+n3PHg37CUk839t/wAyWPYOlYWPYoXNaApuUsCWO0nAI5C/+6Z7Y0fdXMgxgqrgKu0LuLAqASeMoT14zjyjQUMyOQ5Ve82Mviwyis2ZyjKwI8sMB1yDxiN9oKADW1b2vaQx2fESoI25AJJUHcfEcDJ9TOXQhp+H1eDTVRzhe/fudnitXV8To+01HxSxl16cl2x8XnLg6nSb1IHxlW7teneVgsgrPHUFXKeqgr/TM0anv04V2tTYoY7fHWw8JtcHajocYYnJGBgnkWd2gyDY4O1Qvd0qdz4VBsBZeS3hLYQgZJw+eJK0SLSqjeMIKmChcvu212MQOAoOHBYnLZIJY8S71Usrnz9Oq93xszWi26lyqn36Ps/pXe6avshX21aizO847tchTuYL8IIJ5ZfiK7dw8LCeo+x97Coaew5tqRGIPxhLASos9HUhkP8A4A4G4CV1jrUorz3CgY7urLWkDcmbLeGxuRR1rB8nbpIfYPbemOporoR1JNisStaqUddwLd2eW3V1Lk5PXJyTnObnqxd2/wA+pvorT0ZJKk3j86/B9j3LGRbm5kthIPaIK4b3E4md52TV+RHlJFVyNx0Mq9deFsGThXTeD8uH/wDgfrIvZFxawnyb4c+QEi8k0ehsT0kZz6zfvcHaev6/KZ4xk8SWiLOfQYB5Pn+pmZqi/v0HpNppFUirdiIiWIEREA0vrDKQRn2lN2fcuDu6glXH9/0MvJFt7PrY7ioJPWUlGyU6I7XVgfEPlmaajtCtKiQ3UYwOSPoJOr0dY6Io+glZ9o2wigeufwlJQpWWTtm32etVlcjOemD1AHSXIXK4MqNKgD7l4JUBsdCc9f0luj9D5Ef7/wAyitRyWfM1U8e4/tPKfa8sNRXtXdmp+Mgfzpnr9J64jn5j8xPJfa5Sbq8HB7qzyz/OnSdXg/3l/fyZyeN/Yl/XzRV6Sre+92atVZkRQcszCpnfAVT0Rj5r5c54m/a995R97PbXXY4NbCsfBai47wlm6soweueMgTHZ+d2DlttpOecg21JTkjAGBuz19zwJtr6T/GIasE328cjc29WJwc5BbTr58Zxnpjq1ZXq52OLTh/xeW8/b49Kd8jv2JvFXdk7vG58HLnYHqIJK4rXAOGwScfy9ZZUhVp3MNu8vlUYFiV2bSbPFk9eQXI3DB4OKirS2PUwWwLgX2YBPiNTk8AYJ+Jcc8c+vMvT9nvbo0qtBR2tWskNyEdK+eOPh28enB6mZTy7b3yawuKUUtsfDH4yPV9oqg+E2hCQMh2QMy7Qe8sx42KjGWfaeDJD6wKigsvegYCsMnl61DOnXaO7O72GPaee7W0DXXXAeDT6ctVUAyqq4O3qx6sRyeSSevEvuxtaKy6NWwIIXiyyonw5DMw+IbQvBJ28Ywp4vKMUk1+fm/wA2U09SbbjLC5J/49Vj5EHWpvJCuQrjc7tyzMFxhvV2YsM8AKVAwN6nRgKO6p0yhqlemy+/GTa62LhU4JGHGAo8WQeOCT67cHAI3rhkZWXVPYrBbVV1OHweuCD6+083uYa/WIeF8Fiqc43m2pdwHqQxGR1lYyvHTPxS+uDSUOGUXeXi16N77Os79z6Cw85w1VW5GHsZvTb5GLUnGuR6BTPpO/TYTtsrOUbGeD1BHmOB+Alfb2AXY4sat124KMcdOfzH5y3sXbaCPP8AtO6Hxn3EiMVYbZXMmpUKCq2bf5g21j8wRj85Pod2+MbQPLIOfw8pIia8KKCIiSBERAEREAREQBKPtcbrq191/XP9peSi7UONRX8x/eZ6nItHmWJr2gnHTJ/zJFX/APNSPLB/L/c6FMgicuzT/CwfLj8DiZMsjqw8xPJ/bRit1ZAz/AsIHvvTE9TW4HP7zPOfapA+qoXAbNbgg5wQXXg4OfL/AEek6vCOtVPs/kzm8Ym9Fpb180V3Y9bp3tbA7letQM7t+P4bhmyF5DoOeu5sDnMsOxu8FGHUiw96LATeclu83HNe5eXI6dOT1Am3f0Kf6tgAzsL7M21jGxF2p0zheoySBOINDHLVqwLkktpwODcDjxLnGwE/IsOCQZeUnK29zGEVCknyT37/AIveQbKjRTl2YZsOSwYKqMdpBZkBXPe2cc9AeoxN27ca51TfWe8urzstJbxFUbaO6VvhzzkYznymvbd+lGkuNQRbSKWTitXB3KSBsAYEYJIPnKj7NlnUXWai1iLVCVKwySu12cs5KqqhhyRjJAyMzVRuDk+v2ZjLU4dRaUeVXjom11+jLzUKiMLGBIa2yta1XcXSm1lFS1rxgbEPOB188TPbfa6XupSq1O74cOuMrnLYTJyQh+isemBJOhrCPltSD/EsatEYO1anLMCQDliHIOfCoZjnO3HDtyyhamahEe2weDez2Wkvli3duDg5UnHqAOuJSNWvxGkr4W+W7W+OlZ+XfLZy0fbG+kE7sqrmsF2DWgv3jM/d4IACHnOCWHrJF1dbtYa9iWrdX4kbvKnQ9zvqZ8DcSUL9MggkdGk3Q9oXW6EWW04NQLiwFRk1HIdVHQEKQce/G0yj1GuddRdTtr2JqNNWhKDcqteGVVPHAUAefAELLdbd/QcVKNu77Vs36/6/s95rayPEJvpbw45nZhkESoobZcV8jyPrOLkehRM1dWJG0Z5PtkfnmWNwysrND1b9+ksv1EbE2IialRERAEREAREQBERAEo+1Bm9MeQz+svJU6g/8tP8AxwfwMpqci0eZYaG/OJyV9hdCPMkfInM1ddj5HTz/AEkvVVZwfPHWYlzmORPP9u9nF7kKruK1MceJue8QD+GCos6nhmCjqc4nolPP0lN2qjm4qgLMaDwDjIFqbufkZppNqVoz1UnGmRPuTAqCzhu6dmXvDlFV6ygVal7sHBfwqD1GScAyLrzh3BuKbSwKlt+AqMM7nrOeQH+Wc4GTLOvTd27I71gCixnzYQEA7gEvjGwYU8/P0lX2v2YjW3MdRUrMX4csuA1Nyrk4/wC5b5Kes6INXk5ZppY65z69zZdOpDEXJwLMqwryuwEktnT52rsYHHU45ExrRXXfYbdrkMjKzlfFhAjJ3aAFiHVWAxjjqCSZ0topRxYmopXLurstmXCW7FOExjOWLFv5d+eZXdp6jT7rRUXArJYkr4+OWwGO5skEFmAwxHxZGbxVszm+FZrn1vZ7e8l6hLEcahVRSMkBwqJyhVlRFycnaOrZBVhgnib1Np9yPfY1i42uwawEZUsC61YByduDgk7vPrKvtGixN9nHG/LWgXY2My7ldwBYzODxtBXBOPM8ftDodzdyhBC2uieLdtJs2HJC7gfhyBnHlySJeMU6t/2jKc3FOo32e7299b9t7q+oOjsJr0xevb/DIZmPhsG1SiOxIAd0yMDIc8dCKSg51RZlLMz9nMW25xuVMsTjw5Zx6cyH2drVqCrY6VMu7beK2udlDMo2eLZgFWAJ6cY85adl7u+yQdrpoGTIAJWu/T1hiATjJRjjOcESzi4Xfx9Vv+dyNPUWo4JVad0tlTWVtXK/nt9IlL20CjpYPYH5ZlywMi66rvKyD18p5ryj11gk0WB1BHmP7SBp1wxH78pB7F1ZU9230lvYviz65P6SYu2mVarAiImxUREQBERAEREAREQBKR2/5Y+R/SXcoS3/ACx8z+kpqcl6loltqVyD8puupO1T5EYPzE3wCcGY+6jBGfPMypljJIPIlPr1b7xgNj+D/UVGO8A5IIPmOAw/tLNtOy9Ok4avs1rHWxbnqYIUO0VsGBIPIsRuhXyloNXkiatFVpbmS11yTtovICqigEGsnapAXnI+I+XJmO2K3L2gElVClgzu2VsqtBUeL1GfkWHniViWp37r32tLbX350tTKUbcC2O7xtbuWwcYOPeTKv+QVVdVqD39X3gE6asDuwCgJITgkHp55HrOjhadv6+vQ52rVfYXE/wDLrVnUJVYdu0Y3d1Ux3N5/EBzyR/4zz3alqijggbkXavifHhVlBLHBZQ7DvAeOVCgdLjV9p1GtnOuuZbw9bbdIWKlStTKyhM1nLKBnGSRiZ1/Z9f3YXW6qzurBUgzpDuXlVTCAb0yUrzxzhR6Caw8rV9tnz9xjqwck679OWa3K7titiNQyhcDvQThdwJdztyeQSFzgAEhQdxA2yTq7GXUI77dv3hH3bidqG7dhzgKuAwOOuGyTyJY29hjvTS+scvdXYQDQCApb+JtY8Kc29M58XoeYOs1FIJU6xwqK7jZowFfurUd2rIXbZtdAWI9CemZKdpJZ/p/bsVei0239OeX17knRqv3rRHAIa3Xpng8Cyxl/9xP1nPT3h30YByRXWr+zLdS+D74DEevOJGfTUUOtv3vUeADUKU0u5FGoJUNxWQM8jHHT2l52X2Pl67RfftC1nbZSlQYV7gisuxXVhnz8sdRKypK/o+/buXhCVvlzXuqK+aPTuY4ImtjgjEwDOM7Sg7Up2vuWWek1G9VPt/ictam7I+cg9kOVtKH+nP6SI4kHyLuIiblBERAEREAREQBERAE82zf8oH3P6f7nozPO6avdew8+o/GZ6mxaJeXjK5HBExRYehPUcH3nC0OMjHWRX3+mD1mZct11ZXG4Yz5+X1khCp6YlH3j8+YPkRn6TkA3kSIvqQSrey7PvN1wZNtmnWlVIbIZCzKxI4IzY+fkvvKbsr7L36ba1LVbxpe4JZ7iDYGBWwA52jA+EY6fhaLq7l88idB2o/pNFqtKl+UVcCkb7KXV1WVUtWVf7rZix2G22kqXAK18qy1VgEjPUn3vftL2U99KpWyA97U5LlsYrdbMcDkkqBMDtZvNZuva59Ieq20+n+PsiFpqqOXa3ZNr303UvUBWtisLAzZFjVE7dpGCFrOCT1I4lTpPs93C0/ebqzVpldKdoIZ942A254BFZK4HBLZz0Evk7V/6/lNbNWrkEpnHTOcfPHQn38oU6XD/AL3+794cNzzdH2aX7m2lOrQsWq2uVJArrZe7rK7hu4QjAI6nzM9F2PRXXWlPe1s6jBCHAz1OFLsR+JnarWgAAKABwAAABjpidPv3tJlqOSp9b2+xChXIlCkcTBUcn6SIdcfITQ6pz5Spc7anStnI5ErM/wAdTjBAwwk4XP5yCTm0n2P7/WQ9iS3iImxmIiIAiIgCIiAIiIBhjwZ5jR2YuL+hnqJSHSI97gj+VTkcYPMz1FgtEuKNYrjrzOppBnnH0bp0ORO2n1zrgHJmV2XotnpxMBRN6NSGHM5XeE58oFgqBMhR7TdRuGROXzgG2B+xM92p8prg9RyPSYX2gDuBnpAqHpNy0cwDTuZstIm0AyxBkKBG+CJzJghmzvK4EGw+wP8AbH6yxGMH9+Uqjxd81P6j/Ulii7iImxQREQBERAEREAREQBKnRnOos+QlsZSdlv8Ax7Pl+hlJ7Fo7lhZWecYnAKpHIku1trAn4TwfYzm9JByvKmYmlkZaivSSq7/JhOfkJ03Bh5ZEEHEOa24+EyZYgYZHWRHUMMfhNKrSAOskHXcVPIm4sGeeDHe56qfzmDX7H8IIOpEZmgVvSZ2n+kyaBlTM5nIg+hjf7RQOu6YmnfDzm1Tqc8iSQHXAz5GV1hDOPZc5+v8AqT7xhWwcg4+hlXX8ef6gcfQwwXomYETYoIiIAiIgCIiAIiIBgzz/AGa3/IYeoP5GehkMdnqG3r4TznHvKyi3RZOiU5BGCCR8h/mQlbbwC2PIEjr1xnE7tpc9WY/X/Ez9zT0leAcVEZrBzx0PrMG4e34ZMljSr6TcVD0EezHEV63nyB98AD68iboXIwQ3zz/uTwJmWUERxMqfu9vr+Z/Sb/d7c8Efv6SziTwoWyt+73f+pkem2Z+7Wc5YH08MsYikRbK77u+R0I6Hkj5eU6Lu9D0AP5585NiRwom2V2bPF18scjmbCw7hkcYPO3ofwk7EztjhQtlbZaDnp0z+/wB+Uh06hWfpzg/r/gy82D0mO7HpHB3HEbAzMRLECIiAIiIAiIgCIiAIiIAiIgCIiAIiIAiIgCIiAIiIAiIgCIiAIiIAiIgCIiAf/9k="
+                                  class="d-block w-100"
+                                  alt="..."
+                                />
+                              </div>
+                              <div class="carousel-item">
+                                <img
+                                  src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSRM9exviFVjOEJMyKLR5b_EOeeJSaoK9pt9EOHIQLZMQcqBLHU6-mEWayYhWMF_yDpIu0&usqp=CAU"
+                                  class="d-block w-100"
+                                  alt="..."
+                                />
+                              </div>
+                            </div>
+                            <button
+                              class="carousel-control-prev"
+                              type="button"
+                              data-bs-target="#Graphic-T-Shirt-Carousel"
+                              data-bs-slide="prev"
+                            >
+                              <span
+                                class="carousel-control-prev-icon"
+                                aria-hidden="true"
+                              ></span>
+                              <span class="visually-hidden">Previous</span>
+                            </button>
+                            <button
+                              class="carousel-control-next"
+                              type="button"
+                              data-bs-target="#Graphic-T-Shirt-Carousel"
+                              data-bs-slide="next"
+                            >
+                              <span
+                                class="carousel-control-next-icon"
+                                aria-hidden="true"
+                              ></span>
+                              <span class="visually-hidden">Next</span>
+                            </button>
+                          </div>
+                        </div>
+                        <div class="col-md-3">
+                          <h5 class="display-6">Price: <span>$10.00</span></h5>
+                          <table class="table">
+                            <tbody>
+                              <tr>
+                                <td>Status:</td>
+                                <td><span class="text-danger">Sold</span></td>
+                              </tr>
+                              <tr>
+                                <td>Seller:</td>
+                                <td><a href="#">Stefan Stojanovski</a></td>
+                              </tr>
+                            </tbody>
+                          </table>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="modal-footer">
+                    <button
+                      type="button"
+                      class="btn btn-secondary"
+                      data-bs-dismiss="modal"
+                    >
+                      Contact Seller
+                    </button>
+                    <button
+                      type="button"
+                      id="buy-button"
+                      class="btn btn-primary"
+                    >
+                      Buy
+                    </button>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="col">
+              <div class="card h-100">
+                <img
+                  src="https://images.unsplash.com/photo-1434389677669-e08b4cac3105?q=80&w=3220&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+                  class="card-img-top"
+                  alt="..."
+                />
+                <div class="card-body">
+                  <h5 class="card-title">Women's Sweater</h5>
+                  <p class="card-text">$23</p>
+                  <p class="card-text text-success">Available</p>
+                </div>
+              </div>
+            </div>
+            <!-- start add new item code -->
+            <div class="col">
+              <div class="card h-100">
+                <img
+                  src="https://images.unsplash.com/photo-1618354691551-44de113f0164?q=80&w=2586&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+                  class="card-img-top"
+                  alt="..."
+                />
+                <div class="card-body">
+                  <h5 class="card-title">Women's Crewneck</h5>
+                  <p class="card-text">$50</p>
+                  <p class="card-text text-danger">Sold</p>
+                </div>
+              </div>
+            </div>
+            <div class="col">
+              <div class="card h-100">
+                <img
+                  src="https://images.unsplash.com/photo-1644569333418-acbe873d0ec2?q=80&w=3543&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+                  class="card-img-top"
+                  alt="..."
+                />
+                <div class="card-body">
+                  <h5 class="card-title">Tissot PRX</h5>
+                  <p class="card-text">$350</p>
+                  <p class="card-text text-success">Available</p>
+                </div>
+              </div>
+            </div>
+            <div class="col">
+              <div class="card h-100">
+                <img
+                  src="https://images.unsplash.com/photo-1624378439575-d8705ad7ae80?q=80&w=3566&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+                  class="card-img-top"
+                  alt="..."
+                />
+                <div class="card-body">
+                  <h5 class="card-title">Men's Jeans</h5>
+                  <p class="card-text">$45</p>
+                  <p class="card-text text-success">Available</p>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-12">
+              <footer class="d-flex justify-content-center mt-5">
+                <nav aria-label="Page navigation example">
+                  <ul class="pagination">
+                    <li class="page-item">
+                      <a class="page-link" href="#" aria-label="Previous">
+                        <span aria-hidden="true">&laquo;</span>
+                      </a>
+                    </li>
+                    <li class="page-item">
+                      <a class="page-link" href="#">1</a>
+                    </li>
+                    <li class="page-item">
+                      <a class="page-link" href="#">2</a>
+                    </li>
+                    <li class="page-item">
+                      <a class="page-link" href="#">3</a>
+                    </li>
+                    <li class="page-item">
+                      <a class="page-link" href="#" aria-label="Next">
+                        <span aria-hidden="true">&raquo;</span>
+                      </a>
+                    </li>
+                  </ul>
+                </nav>
+              </footer>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- bootstrap -->
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
+      crossorigin="anonymous"
+    ></script>
+  </body>
+</html>

@@ -1,0 +1,39 @@
+Entity-Relationship Diagram Description:
+
+Entities and Attributes:
+1. Product
+   - Item ID (Primary Key)
+   - User ID
+   - Price
+   - Availability
+   - Brand
+   - Size
+   - Gender
+   - Condition
+   - Item Category
+   - Seller Name
+   - Description
+
+2. User (Account)
+   - User ID (Primary Key)
+   - Email
+   - Username
+   - Password
+   - Name
+     - First Name
+     - Last Name
+
+3. Bought Products
+   - Bought Product ID (Primary Key)
+   - User ID (Foreign Key)
+   - Item ID (Foreign Key)
+
+Relationships:
+- Products 'Posts' User (Account): A one-to-many relationship, indicating that a user can post multiple products.
+- User (Account) 'Has' Bought Products: A one-to-many relationship, indicating that a user can buy multiple products.
+- Product 'is in' Bought Products: A many-to-one relationship, indicating that multiple products can be part of the bought products.
+
+Cardinality:
+- The 'Posts' relationship has a one-to-many ('1', 'm') cardinality between User (Account) and Product.
+- The 'Has' relationship has a one-to-many ('1', 'm') cardinality between User (Account) and Bought Products.
+- The 'is in' relationship has a many-to-one ('m', '1') cardinality between Product and Bought Products.

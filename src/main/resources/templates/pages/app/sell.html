@@ -65,7 +65,11 @@
               <!-- Menu options -->
               <ul class="nav nav-pills d-flex flex-column mb-auto">
                 <li class="nav-item">
-                  <a href="#" class="nav-link link-dark" aria-current="page">
+                  <a
+                    href="./dashboard.html"
+                    class="nav-link link-dark"
+                    aria-current="page"
+                  >
                     <svg class="bi me-2" width="16" height="16"></svg>
                     Dashboard
                   </a>
@@ -142,20 +146,23 @@
 
     <div class="container my-5">
       <div class="row">
-        <div class="col-8">
+        <div class="col-md-8">
           <h3>Add New Product</h3>
         </div>
-        <div class="col-2">
+        <div class="col-md-2">
           <button
             type="button"
             id="save-button"
-            class="btn btn-secondary w-100"
+            class="btn btn-secondary w-100 d-none d-lg-block"
           >
-            Save Draft
+            Save
           </button>
         </div>
-        <div class="col-2">
-          <button type="button" class="btn btn-primary w-100 publish-button">
+        <div class="col-md-2">
+          <button
+            type="button"
+            class="btn btn-primary w-100 publish-button d-none d-lg-block"
+          >
             Publish
           </button>
         </div>
@@ -182,11 +189,12 @@
                 name="item-description"
                 id="item-description-input"
                 rows="3"
+                onchange="updateDesc(this.value)"
               ></textarea>
             </div>
             <div class="mb-3">
               <label for="formFile" class="form-label">Pictures</label>
-              <input class="form-control" type="file" id="formFile" />
+              <input class="form-control" type="file" id="formFile" multiple />
             </div>
             <div class="mb-3">
               <label for="price-input" class="form-label">Price</label>
@@ -195,6 +203,7 @@
                 class="form-control"
                 name="price"
                 id="price-input"
+                onchange="updatePrice(this.value)"
               />
             </div>
             <div class="mb-3">
@@ -204,6 +213,7 @@
                 class="form-control"
                 name="brand"
                 id="brand-input"
+                onchange="updateBrand(this.value)"
               />
             </div>
             <div class="mb-3">
@@ -213,16 +223,48 @@
                 class="form-control"
                 name="size"
                 id="size-input"
+                onchange="updateSize(this.value)"
               />
             </div>
             <div class="mb-3">
-              <label for="gender-input" class="form-label">Gender</label>
-              <input
-                type="text"
-                class="form-control"
-                name="gender"
-                id="gender-input"
-              />
+              <label class="form-label">Gender</label>
+              <div class="form-check">
+                <input
+                  class="form-check-input"
+                  type="radio"
+                  name="gender"
+                  id="male-radio"
+                  value="Male"
+                  onchange="updateGender(this.value)"
+                />
+                <label class="form-check-label" for="male-radio"> Male </label>
+              </div>
+              <div class="form-check">
+                <input
+                  class="form-check-input"
+                  type="radio"
+                  name="gender"
+                  id="female-radio"
+                  value="Female"
+                  onchange="updateGender(this.value)"
+                />
+                <label class="form-check-label" for="female-radio">
+                  Female
+                </label>
+              </div>
+              <div class="form-check">
+                <input
+                  class="form-check-input"
+                  type="radio"
+                  name="gender"
+                  id="unisex-radio"
+                  value="Unisex"
+                  onchange="updateGender(this.value)"
+                />
+                <label class="form-check-label" for="unisex-radio">
+                  Unisex
+                </label>
+              </div>
             </div>
             <div class="mb-3">
               <label for="condition-input">Condition</label>
@@ -231,20 +273,28 @@
                 name="condition"
                 class="form-select"
                 aria-label="Condition"
+                onchange="updateCondition(this.value)"
               >
                 <option selected>Select</option>
-                <option value="1">Perfect</option>
-                <option value="2">Good</option>
-                <option value="3">Used</option>
-                <option value="4">Poor</option>
+                <option value="Perfect">Perfect</option>
+                <option value="Good">Good</option>
+                <option value="Used">Used</option>
+                <option value="Poor">Poor</option>
               </select>
             </div>
             <button type="submit" class="btn btn-primary w-100 publish-button">
               Publish
             </button>
+            <button
+              type="button"
+              id="save-button"
+              class="btn btn-secondary w-100 mt-2 d-lg-none"
+            >
+              Save
+            </button>
           </form>
         </div>
-        <div class="col-md-7">
+        <div class="col-md-7 d-none d-lg-block">
           <h4 class="mt-3">Preview</h4>
           <div class="container h-100">
             <div class="row border rounded">
@@ -264,7 +314,9 @@
                 </div>
               </div>
               <div class="col-3">
-                <h5 class="display-6">Price: <span>$0.00</span></h5>
+                <h5 class="display-6">
+                  Price: $<span id="price-preview">0.00</span>
+                </h5>
 
                 <table class="table" style="padding: 0; margin: 0">
                   <tbody>
@@ -276,19 +328,19 @@
                     </tr>
                     <tr>
                       <td>Brand:</td>
-                      <td>NA</td>
+                      <td id="brand-preview">NA</td>
                     </tr>
                     <tr>
                       <td>Size:</td>
-                      <td>NA</td>
+                      <td id="size-preview">NA</td>
                     </tr>
                     <tr>
                       <td>Gender:</td>
-                      <td>NA</td>
+                      <td id="gender-preview">NA</td>
                     </tr>
                     <tr>
                       <td>Condition:</td>
-                      <td>NA</td>
+                      <td id="condition-preview">NA</td>
                     </tr>
                     <tr>
                       <td>Seller:</td>
@@ -297,13 +349,47 @@
                   </tbody>
                 </table>
                 <p style="margin-bottom: 0; padding-bottom: 0">Description:</p>
-                <p style="margin-top: 0; padding-top: 0">NA</p>
+                <p style="margin-top: 0; padding-top: 0" id="desc-preview">
+                  NA
+                </p>
               </div>
             </div>
           </div>
         </div>
       </div>
     </div>
+    <!-- Update Preview -->
+    <script>
+      function updateBrand(value) {
+        let brand = document.querySelector("#brand-preview");
+        brand.innerHTML = value;
+      }
+
+      function updatePrice(value) {
+        let price = document.querySelector("#price-preview");
+        price.innerHTML = value;
+      }
+
+      function updateSize(value) {
+        let size = document.querySelector("#size-preview");
+        size.innerHTML = value;
+      }
+
+      function updateGender(value) {
+        let gender = document.querySelector("#gender-preview");
+        gender.innerHTML = value;
+      }
+
+      function updateCondition(value) {
+        let condition = document.querySelector("#condition-preview");
+        condition.innerHTML = value;
+      }
+
+      function updateDesc(value) {
+        let desc = document.querySelector("#desc-preview");
+        desc.innerHTML = value;
+      }
+    </script>
 
     <script
       src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"

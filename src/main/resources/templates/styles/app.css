@@ -89,6 +89,16 @@ input[type="number"] {
   border-color: var(--dark-shade);
 }
 
+#formFile::file-selector-button {
+  background-color: var(--light-accent);
+  border-color: var(--dark-shade);
+  color: var(--light-shade);
+}
+
+#formFile::file-selector-button:hover {
+  background-color: #86644f;
+}
+
 .publish-button {
   background-color: var(--main-color);
   border-color: var(--main-color);
@@ -102,6 +112,11 @@ input[type="number"] {
 #save-button:hover {
   background-color: #86644f;
   border-color: #86644f;
+}
+
+.publish-button:hover {
+  background-color: #3e5995;
+  border-color: #3e5995;
 }
 
 .modal-content {

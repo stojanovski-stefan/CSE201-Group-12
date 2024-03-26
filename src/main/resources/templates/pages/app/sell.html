@@ -146,12 +146,18 @@
           <h3>Add New Product</h3>
         </div>
         <div class="col-2">
-          <button type="button" class="btn btn-secondary w-100">
+          <button
+            type="button"
+            id="save-button"
+            class="btn btn-secondary w-100"
+          >
             Save Draft
           </button>
         </div>
         <div class="col-2">
-          <button type="button" class="btn btn-primary w-100">Publish</button>
+          <button type="button" class="btn btn-primary w-100 publish-button">
+            Publish
+          </button>
         </div>
       </div>
       <div class="row">
@@ -233,6 +239,9 @@
                 <option value="4">Poor</option>
               </select>
             </div>
+            <button type="submit" class="btn btn-primary w-100 publish-button">
+              Publish
+            </button>
           </form>
         </div>
         <div class="col-md-7">

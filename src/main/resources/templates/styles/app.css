@@ -78,6 +78,32 @@ input[type="number"] {
   border-color: var(--dark-shade);
 }
 
+#item-name-input,
+#item-description-input,
+#brand-input,
+#size-input,
+#gender-input,
+#condition-input,
+#formFile {
+  background-color: var(--light-shade);
+  border-color: var(--dark-shade);
+}
+
+.publish-button {
+  background-color: var(--main-color);
+  border-color: var(--main-color);
+}
+
+#save-button {
+  background-color: var(--light-accent);
+  border-color: var(--light-accent);
+}
+
+#save-button:hover {
+  background-color: #86644f;
+  border-color: #86644f;
+}
+
 .modal-content {
   /* background-color: var(--light-shade); */
   color: var(--dark-shade);
